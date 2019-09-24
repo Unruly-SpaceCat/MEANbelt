@@ -1,0 +1,33 @@
+#offset-left {
+    margin-left: 90%;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
+h3 {
+    display: inline-block;
+}
+
+input[type="text"]{
+    width: 200px;
+}
+
+#question {
+    width: 500px;
+}
+
+button {
+    margin-left: 50%;
+}
+
+#wrapper {
+    padding-left: 50px;
+}
+
+small {
+    color: red;
+}

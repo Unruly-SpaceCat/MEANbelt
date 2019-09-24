@@ -1,0 +1,39 @@
+<a id="offset-left" [routerLink]="['/create']">Create a New Poll</a>
+<button (click)="logout()">Logout</button>
+<div id="wrapper">
+<h2>Current Polls:</h2>
+<input type="text" (keyup)="findsurveys($event.target.value)" placeholder="Search">
+<br><br>
+<div *ngIf="loaded">
+    <table class="table table-striped">
+        <thead>
+            <th scope="col">Name</th>
+            <th scope="col">Survey Question</th>
+            <th scope="col">Date Posted</th>
+            <th scope="col">Action</th>
+        </thead>
+        <tr *ngFor="let survey of allsurveys">
+            <th scope="row">{{survey.name}}</th>
+            <td><button [routerLink]="['/poll/' + survey._id]">{{survey.question}}</button></td>
+            <td>{{survey.createdAt | date}}</td>
+            <td *ngIf="survey.name === name"><button (click)="delete(survey._id)">Delete</button></td>
+        </tr>
+    </table>
+</div>
+<div *ngIf="oneUser">
+    <table class="table table-striped">
+        <thead>
+            <th scope="col">Name</th>
+            <th scope="col">Survey Question</th>
+            <th scope="col">Date Posted</th>
+            <th scope="col">Action</th>
+        </thead>
+        <tr *ngFor="let survey of showOneUser">
+            <th scope="row">{{survey.name}}</th>
+            <td><button [routerLink]="['/poll/' + survey._id]">{{survey.question}}</button></td>
+            <td>{{survey.createdAt | date}}</td>
+            <td *ngIf="survey.name === name"><button (click)="delete(survey._id)">Delete</button></td>
+        </tr>
+    </table>
+</div>
+</div>

@@ -1,0 +1,33 @@
+<a id="offset-left" [routerLink]="['/dashboard']">Go to Polls</a>
+<div id="wrapper" *ngIf="loaded">
+    <h1>{{ surveyToShow.question}}</h1><br><br>
+    <h6>Click the vote button to choose one</h6><br>
+    <table class="table table-striped">
+            <thead>
+                <th scope="col">Option</th>
+                <th scope="col">Current Count of Votes</th>
+                <th scope="col">Action</th>
+            </thead>
+            <tr>
+                <th scope="row">{{surveyToShow.option1}}</th>
+                <td>{{surveyToShow.option1votes}}</td>
+                <td><button (click)="castVote('option1votes')">Vote</button></td>
+            </tr>
+            <tr>
+                <th scope="row">{{surveyToShow.option2}}</th>
+                <td>{{surveyToShow.option2votes}}</td>
+                <td><button (click)="castVote('option2votes')">Vote</button></td>
+            </tr>
+            <tr>
+                <th scope="row">{{surveyToShow.option3}}</th>
+                <td>{{surveyToShow.option3votes}}</td>
+                <td><button (click)="castVote('option3votes')">Vote</button></td>
+            </tr>
+            <tr>
+                <th scope="row">{{surveyToShow.option4}}</th>
+                <td>{{surveyToShow.option4votes}}</td>
+                <td><button (click)="castVote('option4votes')">Vote</button></td>
+            </tr>
+        </table>
+
+</div>

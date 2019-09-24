@@ -1,0 +1,18 @@
+<a id="offset-left" [routerLink]="['/dashboard']">Cancel</a>
+<div id="wrapper">
+<h1>Put the questions and options here:</h1>
+<form (submit)="addnewsurvey()">
+        <small *ngIf="questionerror">{{questionerror}}</small><br>
+<h3>Question: </h3><input id="question" name="newsurvey.question" [(ngModel)]="newsurvey.question" type="text"><br><br>
+<small *ngIf="option1error">{{option1error}}</small><br>
+<h3>Option 1: </h3><input name="newsurvey.option1" [(ngModel)]="newsurvey.option1" type="text"><br><br>
+<small *ngIf="option2error">{{option2error}}</small><br>
+<h3>Option 2: </h3><input name="newsurvey.option2" [(ngModel)]="newsurvey.option2" type="text"><br><br>
+<small *ngIf="option3error">{{option3error}}</small><br>
+<h3>Option 3: </h3><input name="newsurvey.option3" [(ngModel)]="newsurvey.option3" type="text"><br><br>
+<small *ngIf="option4error">{{option4error}}</small><br>
+<h3>Option 4: </h3><input name="newsurvey.option4" [(ngModel)]="newsurvey.option4" type="text"><br><br>
+<button type="submit">Create  Poll</button>
+</form>
+</div>
+
